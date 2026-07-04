@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -30,17 +30,28 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
               <li class="nav-item">
-                  <a class="nav-link tm-nav-link" href="#introduction">¿Quiénes somos?</a>
+                  <a class="nav-link tm-nav-link" href="#introduction" data-i18n="nav_about">¿Quiénes somos?</a>
               </li>
               <li class="nav-item">
-                  <a class="nav-link tm-nav-link" href="#galeria">Galería</a>
+                  <a class="nav-link tm-nav-link" href="#galeria" data-i18n="nav_gallery">Galería</a>
               </li>
               <li class="nav-item">
-                  <a class="nav-link tm-nav-link" href="#instalaciones">Nuestras Instalaciones</a>
+                  <a class="nav-link tm-nav-link" href="#instalaciones" data-i18n="nav_facilities">Nuestras Instalaciones</a>
               </li>
               <li class="nav-item">
-                  <a class="nav-link tm-nav-link" href="#contact">Contáctenos</a>
-              </li>                    
+                  <a class="nav-link tm-nav-link" href="#contact" data-i18n="nav_contact">Contáctenos</a>
+              </li>
+              <li class="nav-item tm-lang-switch">
+                <details class="tm-lang-details">
+                  <summary class="tm-lang-summary" aria-label="Language / Idioma">
+                    <i class="fas fa-globe"></i>
+                  </summary>
+                  <div class="tm-lang-menu">
+                    <button type="button" class="tm-lang-btn" data-lang="es">Español</button>
+                    <button type="button" class="tm-lang-btn" data-lang="en">English</button>
+                  </div>
+                </details>
+              </li>
             </ul>
           </div>        
         </div>
@@ -48,7 +59,9 @@
       
       <div class="text-center tm-hero-text-container">
         <div class="tm-hero-text-container-inner">
-        </div>        
+          <h1 class="tm-hero-title" data-i18n="hero_title">Entre la playa y la jungla</h1>
+          <p class="tm-hero-subtitle" data-i18n="hero_subtitle">Descanso, playa y piscina privada en Punta Leona</p>
+        </div>
       </div>
 
       <div class="tm-next tm-intro-next">
@@ -66,13 +79,13 @@
           </div>
           <div class="col-lg-6">
             <div class="tm-intro-text-container">
-                <h2 class="tm-text-primary mb-4 tm-section-title">¿Quiénes somos?</h2>
-                <p class="mb-4 tm-intro-text">
+                <h2 class="tm-text-primary mb-4 tm-section-title" data-i18n="intro_title">¿Quiénes somos?</h2>
+                <p class="mb-4 tm-intro-text" data-i18n="intro_body">
                   Ubicado en Punta Leona, Avocado's Pool es un complejo vacacional de playa que cuenta con una casa y un apartamento
                   con piscina privada muy cerca de <strong>Playa Mantas</strong> y <strong>Playa Blanca</strong>.
               </p>
                 <div class="tm-next">
-                    <a href="#galeria" class="tm-intro-text tm-btn-primary">Ver galería</a>
+                    <a href="#galeria" class="tm-intro-text tm-btn-primary" data-i18n="intro_cta">Ver galería</a>
                 </div>
             </div>
           </div>
@@ -81,47 +94,47 @@
         <div class="row tm-section-pad-top">
           <div class="col-lg-4">
             <i class="fas fa-4x fa-swimming-pool text-center tm-icon"></i>
-            <h4 class="text-center tm-text-primary mb-4">Piscina privada</h4>
-             <p class="text-center">
+            <h4 class="text-center tm-text-primary mb-4" data-i18n="feat_pool_title">Piscina privada</h4>
+             <p class="text-center" data-i18n="feat_pool_body">
               De uso exclusivo para los huéspedes y totalmente privada.
             </p>
           </div>
-        
+
         <div class="col-lg-4 mt-5 mt-lg-0">
           <i class="fas fa-4x fa-snowflake text-center tm-icon"></i>
-          <h4 class="text-center tm-text-primary mb-4">Aire acondicionado</h4>
-          <p class="text-center">
+          <h4 class="text-center tm-text-primary mb-4" data-i18n="feat_ac_title">Aire acondicionado</h4>
+          <p class="text-center" data-i18n="feat_ac_body">
             Para su confort todas las habitaciones cuentan con aire acondicionado
           </p>
         </div>
         <div class="col-lg-4 mt-5 mt-lg-0">
           <i class="fas fa-4x fa-umbrella-beach text-center tm-icon"></i>
-          <h4 class="text-center tm-text-primary mb-4">Acceso a playas</h4>
-          <p class="text-center">
+          <h4 class="text-center tm-text-primary mb-4" data-i18n="feat_beach_title">Acceso a playas</h4>
+          <p class="text-center" data-i18n="feat_beach_body">
             Disfrute de Playa Mantas y Playa Blanca con nuestro servicio de menaje de playa (toldo, mesa, sillas, hamaca, asador)
           </p>
         </div>
         <div class="row tm-section-pad-top-medio">
           <div class="col-lg-4">
             <i class="fas fa-4x fa-paw text-center tm-icon"></i>
-            <h4 class="text-center tm-text-primary mb-4">Pet Friendly</h4>
-            <p class="text-center">¡Tu mascota es parte de la familia y también es bienvenida!</p>
+            <h4 class="text-center tm-text-primary mb-4" data-i18n="feat_pet_title">Pet Friendly</h4>
+            <p class="text-center" data-i18n="feat_pet_body">¡Tu mascota es parte de la familia y también es bienvenida!</p>
           </div>
-        
+
         <div class="col-lg-4 mt-5 mt-lg-0">
           <i class="fas fa-4x fa-bed text-center tm-icon"></i>
-          <h4 class="text-center tm-text-primary mb-4">Capacidad</h4>
-          <p class="text-center">
-          Contamos con dos edificios, una casa para mínimo 7 y hasta 11 personas, 
+          <h4 class="text-center tm-text-primary mb-4" data-i18n="feat_capacity_title">Capacidad</h4>
+          <p class="text-center" data-i18n="feat_capacity_body">
+          Contamos con dos edificios, una casa para mínimo 7 y hasta 11 personas,
           y un apartamento para un máximo de 6 personas
           </p>
         </div>
         <div class="col-lg-4 mt-5 mt-lg-0">
           <i class="far fa-4x fa-clock text-center tm-icon"></i>
-          <h4 class="text-center tm-text-primary mb-4">Check-in, Check-out</h4>
-          <p class="text-center">
+          <h4 class="text-center tm-text-primary mb-4" data-i18n="feat_checkin_title">Check-in, Check-out</h4>
+          <p class="text-center" data-i18n="feat_checkin_body">
           <strong>Check-in: </strong> 3:00 pm <br/>
-          <strong>Check-out: </strong> 12:00 md 
+          <strong>Check-out: </strong> 12:00 md
           </p>
         </div>
       </div>
@@ -130,7 +143,7 @@
       <div class="container tm-container-gallery">
         <div class="row">
           <div class="text-center col-12">
-              <h2 class="tm-text-primary tm-section-title mb-4">Instalaciones</h2>
+              <h2 class="tm-text-primary tm-section-title mb-4" data-i18n="gallery_title">Instalaciones</h2>
           </div>            
         </div>
         <div class="row">
@@ -141,7 +154,7 @@
                         <figure class="effect-honey tm-gallery-item">
                           <img src="img/comunes/tn-01.jpg" alt="Image" class="img-fluid">
                           <figcaption>
-                            <h3><i>Avocados' <span>Pool</span></i></h3>
+                            <h3 data-i18n="gcap_pool"><i>Avocados' <span>Pool</span></i></h3>
                           </figcaption>
                         </figure>
                       </a>
@@ -149,7 +162,7 @@
                         <figure class="effect-honey tm-gallery-item">
                           <img src="img/comunes/tn-02.jpg" alt="Image" class="img-fluid">
                           <figcaption>
-                            <h3><i>Entrada <span>Principal</span></i></h3>
+                            <h3 data-i18n="gcap_entrance"><i>Entrada <span>Principal</span></i></h3>
                           </figcaption>
                         </figure>
                       </a>
@@ -157,7 +170,7 @@
                         <figure class="effect-honey tm-gallery-item">
                           <img src="img/comunes/tn-03.jpg" alt="Image" class="img-fluid">
                           <figcaption>
-                            <h3><i>Piscina <span>Privada</span></i></h3>
+                            <h3 data-i18n="gcap_privatepool"><i>Piscina <span>Privada</span></i></h3>
                           </figcaption>
                         </figure>
                       </a>
@@ -165,7 +178,7 @@
                         <figure class="effect-honey tm-gallery-item">
                           <img src="img/comunes/tn-05.jpg" alt="Image" class="img-fluid">
                           <figcaption>
-                            <h3><i>Terraza <span>Piscina</span></i></h3>
+                            <h3 data-i18n="gcap_poolterrace"><i>Terraza <span>Piscina</span></i></h3>
                           </figcaption>
                         </figure>
                       </a>
@@ -173,7 +186,7 @@
                         <figure class="effect-honey tm-gallery-item">
                           <img src="img/comunes/pet.jpg" alt="Image" class="img-fluid">
                           <figcaption>
-                            <h3><i>Pet <span>Friendly</span></i></h3>
+                            <h3 data-i18n="gcap_petfriendly"><i>Pet <span>Friendly</span></i></h3>
                           </figcaption>
                         </figure>
                       </a>
@@ -186,7 +199,7 @@
                         <figure class="effect-honey tm-gallery-item">
                           <img src="img/comunes/tn-07.jpg" alt="Image" class="img-fluid">
                           <figcaption>
-                            <h3><i>Disfrute la <span>Naturaleza</span></i></h3>
+                            <h3 data-i18n="gcap_nature"><i>Disfrute la <span>Naturaleza</span></i></h3>
                           </figcaption>
                         </figure>
                       </a>
@@ -194,7 +207,7 @@
                         <figure class="effect-honey tm-gallery-item">
                           <img src="img/comunes/tn-08.jpg" alt="Image" class="img-fluid">
                           <figcaption>
-                            <h3><i>Playa <span>Mantas</span></i></h3>
+                            <h3 data-i18n="gcap_mantas"><i>Playa <span>Mantas</span></i></h3>
                           </figcaption>
                         </figure>
                       </a>
@@ -202,7 +215,7 @@
                         <figure class="effect-honey tm-gallery-item">
                           <img src="img/comunes/tn-09.jpg" alt="Image" class="img-fluid">
                           <figcaption>
-                            <h3><i>Playa <span>Blanca</span></i></h3>
+                            <h3 data-i18n="gcap_blanca"><i>Playa <span>Blanca</span></i></h3>
                           </figcaption>
                         </figure>
                       </a>
@@ -210,7 +223,7 @@
                         <figure class="effect-honey tm-gallery-item">
                           <img src="img/comunes/tn-10.jpg" alt="Image" class="img-fluid">
                           <figcaption>
-                            <h3><i>Playa <span>Blanca</span></i></h3>
+                            <h3 data-i18n="gcap_blanca"><i>Playa <span>Blanca</span></i></h3>
                           </figcaption>
                         </figure>
                       </a>
@@ -220,7 +233,7 @@
         </div>
         <div class="row">
           <div class="text-center col-12">
-              <h3 class="tm-text-primary tm-section-title mb-4">Casa</h2>
+              <h3 class="tm-text-primary tm-section-title mb-4" data-i18n="gallery_casa">Casa</h2>
           </div>            
         </div>
         <div class="row">
@@ -231,7 +244,7 @@
                         <figure class="effect-honey tm-gallery-item">
                           <img src="img/casa/tn-01.jpg" alt="Image" class="img-fluid">
                           <figcaption>
-                            <h2><i>Cocina</i></h2>
+                            <h2 data-i18n="gcap_kitchen"><i>Cocina</i></h2>
                           </figcaption>
                         </figure>
                       </a>
@@ -239,7 +252,7 @@
                         <figure class="effect-honey tm-gallery-item">
                           <img src="img/casa/tn-02.jpg" alt="Image" class="img-fluid">
                           <figcaption>
-                            <h2><i><span>Sala</span></i></h2>
+                            <h2 data-i18n="gcap_livingroom"><i><span>Sala</span></i></h2>
                           </figcaption>
                         </figure>
                       </a>
@@ -247,7 +260,7 @@
                         <figure class="effect-honey tm-gallery-item">
                           <img src="img/casa/tn-03.jpg" alt="Image" class="img-fluid">
                           <figcaption>
-                            <h3><i>Habitación con <span>Baño privado</span></i></h3>
+                            <h3 data-i18n="gcap_bedroom_ensuite"><i>Habitación con <span>Baño privado</span></i></h3>
                           </figcaption>
                         </figure>
                       </a>
@@ -255,7 +268,7 @@
                         <figure class="effect-honey tm-gallery-item">
                           <img src="img/casa/tn-04.jpg" alt="Image" class="img-fluid">
                           <figcaption>
-                            <h3><i>Habitación secundaria</i></h3>
+                            <h3 data-i18n="gcap_bedroom_secondary"><i>Habitación secundaria</i></h3>
                           </figcaption>
                         </figure>
                       </a>
@@ -265,7 +278,7 @@
         </div>
         <div class="row">
           <div class="text-center col-12">
-              <h3 class="tm-text-primary tm-section-title mb-4">Apartamento</h2>
+              <h3 class="tm-text-primary tm-section-title mb-4" data-i18n="gallery_apto">Apartamento</h2>
           </div>            
         </div>
         <div class="row">
@@ -276,7 +289,7 @@
                         <figure class="effect-honey tm-gallery-item">
                           <img src="img/apartamento/tn-01.jpg" alt="Image" class="img-fluid">
                           <figcaption>
-                            <h3><i>Planta <span>Baja</span></i></h3>
+                            <h3 data-i18n="gcap_groundfloor"><i>Planta <span>Baja</span></i></h3>
                           </figcaption>
                         </figure>
                       </a>
@@ -284,7 +297,7 @@
                         <figure class="effect-honey tm-gallery-item">
                           <img src="img/apartamento/tn-02.jpg" alt="Image" class="img-fluid">
                           <figcaption>
-                            <h3><i>Balcón</i></h3>
+                            <h3 data-i18n="gcap_balcony"><i>Balcón</i></h3>
                           </figcaption>
                         </figure>
                       </a>
@@ -292,7 +305,7 @@
                         <figure class="effect-honey tm-gallery-item">
                           <img src="img/apartamento/tn-03.jpg" alt="Image" class="img-fluid">
                           <figcaption>
-                            <h3><i>Habitación</i></h3>
+                            <h3 data-i18n="gcap_room"><i>Habitación</i></h3>
                           </figcaption>
                         </figure>
                       </a>
@@ -300,7 +313,7 @@
                         <figure class="effect-honey tm-gallery-item">
                           <img src="img/apartamento/tn-04.jpg" alt="Image" class="img-fluid">
                           <figcaption>
-                            <h3><i>Baño <span>Principal</span></i></h3>
+                            <h3 data-i18n="gcap_mainbath"><i>Baño <span>Principal</span></i></h3>
                           </figcaption>
                         </figure>
                       </a>
@@ -314,72 +327,72 @@
     <section id="instalaciones" class="tm-section-pad-top">
       <div class="container tm-container-gallery">
         <div class="row">
-          <h2 class="text-center tm-text-primary tm-section-title mb-4">Nuestras Instalaciones</h2>
+          <h2 class="text-center tm-text-primary tm-section-title mb-4" data-i18n="fac_title">Nuestras Instalaciones</h2>
         </div>
         <div class="row">
           <div class="col-lg-4">
               <ul>
-                <li>Piscina privada de uso exclusivo</li>
-                <li>Internet de fibra óptica</li>
-                <li>Televisión por cable</li>
+                <li data-i18n="fac_li_pool">Piscina privada de uso exclusivo</li>
+                <li data-i18n="fac_li_fiber">Internet de fibra óptica</li>
+                <li data-i18n="fac_li_cable">Televisión por cable</li>
               </ul>
           </div>
           <div class="col-lg-4 mt-5 mt-lg-0">
               <ul>
-                <li>A 600 metros de la playa</li>
-                <li>A 300 metros de un mini súper, una POPS y una Pizzería</li>
+                <li data-i18n="fac_li_beach">A 600 metros de la playa</li>
+                <li data-i18n="fac_li_shops">A 300 metros de un mini súper, una POPS y una Pizzería</li>
               </ul>
           </div>
           <div class="col-lg-4 mt-5 mt-lg-0">
               <ul>
-                <li>Parqueo para 4 vehículos frente a la propiedad</li>
-                <li>Residencial de acceso privado con seguridad ambulante noctura</li>
-                <li>Ubicado frente a la jungla con monos cariblancos, lapas e iguanas como vecinos</li>
+                <li data-i18n="fac_li_parking">Parqueo para 4 vehículos frente a la propiedad</li>
+                <li data-i18n="fac_li_security">Residencial de acceso privado con seguridad ambulante noctura</li>
+                <li data-i18n="fac_li_jungle">Ubicado frente a la jungla con monos cariblancos, lapas e iguanas como vecinos</li>
               </ul>
           </div>
         </div>
         <div class="row tm-section-pad-top-medio">
           <div class="col-lg-6">
-            <h2 class="tm-text-primary tm-section-subtitle mb-4">Casa Avocados</h2>
+            <h2 class="tm-text-primary tm-section-subtitle mb-4" data-i18n="fac_casa_title">Casa Avocados</h2>
               <ul class="fa-ul">
-                <li><span class="fa-li"><i class="fas fa-bed"></i></span>7 personas mínimo y hasta 11 máximo</li>
-                <li><span class="fa-li"><i class="fas fa-shower"></i></span>3 baños completos</li>
-                <li><span class="fa-li"><i class="fas fa-snowflake"></i></span>Aire acondicionado en todas las habitaciones</li>
-                <li><span class="fa-li"><i class="fas fa-utensils"></i></span>Cocina equipada</li>
-                <li><span class="fa-li"><i class="fas fa-tshirt"></i></span>Lavadora y secadora</li>
+                <li><span class="fa-li"><i class="fas fa-bed"></i></span><span data-i18n="fac_casa_li1">7 personas mínimo y hasta 11 máximo</span></li>
+                <li><span class="fa-li"><i class="fas fa-shower"></i></span><span data-i18n="fac_casa_li2">3 baños completos</span></li>
+                <li><span class="fa-li"><i class="fas fa-snowflake"></i></span><span data-i18n="fac_casa_li3">Aire acondicionado en todas las habitaciones</span></li>
+                <li><span class="fa-li"><i class="fas fa-utensils"></i></span><span data-i18n="fac_casa_li4">Cocina equipada</span></li>
+                <li><span class="fa-li"><i class="fas fa-tshirt"></i></span><span data-i18n="fac_casa_li5">Lavadora y secadora</span></li>
               </ul>
           </div>
-        
+
           <div class="col-lg-6 mt-5 mt-lg-0">
-            <h2 class="tm-text-primary tm-section-subtitle mb-4">Apartamento Avocados</h2>
+            <h2 class="tm-text-primary tm-section-subtitle mb-4" data-i18n="fac_apto_title">Apartamento Avocados</h2>
               <ul class="fa-ul">
-                <li><span class="fa-li"><i class="fas fa-bed"></i></span>6 personas máximo</li>
-                <li><span class="fa-li"><i class="fas fa-shower"></i></span>2 baños completos</li>
-                <li><span class="fa-li"><i class="fas fa-snowflake"></i></span>Aire acondicionado en todas las habitaciones</li>
-                <li><span class="fa-li"><i class="fas fa-utensils"></i></span>Cocina equipada</li>
+                <li><span class="fa-li"><i class="fas fa-bed"></i></span><span data-i18n="fac_apto_li1">6 personas máximo</span></li>
+                <li><span class="fa-li"><i class="fas fa-shower"></i></span><span data-i18n="fac_apto_li2">2 baños completos</span></li>
+                <li><span class="fa-li"><i class="fas fa-snowflake"></i></span><span data-i18n="fac_apto_li3">Aire acondicionado en todas las habitaciones</span></li>
+                <li><span class="fa-li"><i class="fas fa-utensils"></i></span><span data-i18n="fac_apto_li4">Cocina equipada</span></li>
               </ul>
           </div>
         </div>
 
         <div class="row tm-section-pad-top-medio">
           <div class="col-lg-6">
-            <h2 class="tm-text-primary tm-section-subtitle mb-4">Tarifas por noche</h2>
+            <h2 class="tm-text-primary tm-section-subtitle mb-4" data-i18n="fac_rates_title">Tarifas por noche</h2>
               <ul>
-                <li>₡20 000 -  Personas mayores de 10 años</li>
-                <li>₡10 000 - Niños de 6 a 10 años</li>
-                <li>Gratis - Niños de 0 a 5 años</li>
+                <li data-i18n="fac_rates_li1">₡20 000 -  Personas mayores de 10 años</li>
+                <li data-i18n="fac_rates_li2">₡10 000 - Niños de 6 a 10 años</li>
+                <li data-i18n="fac_rates_li3">Gratis - Niños de 0 a 5 años</li>
               </ul>
           </div>
-        
+
           <div class="col-lg-6 mt-5 mt-lg-0">
-            <h4 class="tm-text-primary mb-4">Alquiler de Menaje de Playa</h4>
-            <span>Incluye:</span>
+            <h4 class="tm-text-primary mb-4" data-i18n="fac_gear_title">Alquiler de Menaje de Playa</h4>
+            <span data-i18n="fac_gear_includes">Incluye:</span>
               <ul>
-                <li>Instalación gratis en Playa Mantas</li>
-                <li>Toldo</li>
-                <li>Mesa y 7 sillas</li>
-                <li>Hamaca</li>
-                <li>Parrilla</li>
+                <li data-i18n="fac_gear_li1">Instalación gratis en Playa Mantas</li>
+                <li data-i18n="fac_gear_li2">Toldo</li>
+                <li data-i18n="fac_gear_li3">Mesa y 7 sillas</li>
+                <li data-i18n="fac_gear_li4">Hamaca</li>
+                <li data-i18n="fac_gear_li5">Parrilla</li>
               </ul>
           </div>
         </div>
@@ -391,11 +404,11 @@
       <div class="container tm-container-contact">
         <div class="row">
             <div class="col-12">
-                <h2 class="mb-4 tm-section-title">Contáctenos</h2>
+                <h2 class="mb-4 tm-section-title" data-i18n="contact_title">Contáctenos</h2>
                 <div class="mb-5 tm-underline">
                   <div class="tm-underline-inner"></div>
                 </div>
-                <p class="mb-5">
+                <p class="mb-5" data-i18n="contact_body">
                 No dude en contactarnos para reservar sus próximas vacaciones de playa.
                 </p>
             </div>
@@ -415,13 +428,13 @@
             <div class="col-sm-12 col-md-3 d-flex align-items-center tm-contact-item">
               <a href="https://waze.com/ul/hd1ez1t6s8" class="tm-contact-item-link">
                   <i class="fab fa-3x fa-waze mr-4"></i>
-                  <span class="mb-0">Ubicación en Waze</span>
+                  <span class="mb-0" data-i18n="contact_waze">Ubicación en Waze</span>
               </a>              
             </div>
         </div>
       </div>
       <footer class="text-center small tm-footer">
-          <p class="mb-0 textblack">
+          <p class="mb-0 textblack" data-i18n="footer_copy">
             Copyright &copy; 2025 Avocados' Pool
           </p>
         </footer>
@@ -430,7 +443,8 @@
     <script src="slick/slick.min.js"></script>
     <script src="magnific-popup/jquery.magnific-popup.min.js"></script>
     <script src="js/jquery.singlePageNav.min.js"></script>     
-    <script src="js/bootstrap.min.js"></script> 
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/i18n.js"></script>
     <script>
 
       function getOffSet(){
@@ -491,14 +505,50 @@
       };
       
       $(function(){
-        // Hero Section - Background Parallax
-        background_image_parallax($(".tm-parallax"), 0.30, false);
-        background_image_parallax_2($("#contact"), 0.80);   
-        
+        // Only run the JS-driven parallax on larger screens and when the user
+        // hasn't requested reduced motion; on mobile/reduced-motion the plain
+        // CSS background (cover/center) already looks fine on its own.
+        function parallaxAllowed(){
+          return !window.matchMedia('(max-width: 767px)').matches &&
+                 !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        }
+
+        if(parallaxAllowed()){
+          // Hero Section - Background Parallax
+          background_image_parallax($(".tm-parallax"), 0.30, false);
+          // #contact uses a pure-CSS fixed background (see templatemo-style.css)
+          // instead of the old JS parallax, which translated the viewport-sized
+          // image and left an uncovered white strip at the bottom of the section.
+        }
+
         // Handle window resize
         window.addEventListener('resize', function(){
-          background_image_parallax($(".tm-parallax"), 0.30, true);
+          if(parallaxAllowed()){
+            background_image_parallax($(".tm-parallax"), 0.30, true);
+          }
         }, true);
+
+        // Scroll-reveal: fade/slide in each .tm-section-pad-top as it enters the viewport.
+        (function(){
+          var sections = document.querySelectorAll('.tm-section-pad-top');
+          var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+          if(reduceMotion || !('IntersectionObserver' in window)){
+            sections.forEach(function(el){ el.classList.add('is-visible'); });
+            return;
+          }
+
+          var observer = new IntersectionObserver(function(entries, obs){
+            entries.forEach(function(entry){
+              if(entry.isIntersecting){
+                entry.target.classList.add('is-visible');
+                obs.unobserve(entry.target);
+              }
+            });
+          }, { threshold: 0.1 });
+
+          sections.forEach(function(el){ observer.observe(el); });
+        })();
 
         // Detect window scroll and update navbar
         $(window).scroll(function(e){          

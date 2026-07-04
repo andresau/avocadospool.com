@@ -1,0 +1,40 @@
+# CLAUDE.md
+
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+
+**Keep this file in sync**: whenever a change touches the site's structure, styling conventions, deployment setup, or vendor libraries, update the relevant section of this CLAUDE.md in the same change.
+
+## What this is
+
+A static single-page marketing site for "Avocados' Pool", a beachfront vacation rental (house + apartment) in Punta Leona, Costa Rica. The shipped/crawled HTML is Spanish (`<html lang="es">`); a client-side toggle swaps in English at runtime (see the i18n section below). There is no build system, package manager, or test suite — the entire site is plain HTML/CSS/JS served as-is.
+
+## Deployment
+
+Hosted on GitHub Pages: `CNAME` pins the custom domain `avocadospool.com`, and `.nojekyll` disables Jekyll processing so files are served verbatim. There is no build/deploy pipeline — pushing to the repo's default branch is the deploy. To preview locally, just open `index.html` in a browser or serve the directory with any static file server (e.g. `python3 -m http.server`).
+
+## Structure
+
+- `index.html` — the entire site. One page, one `<body>`, sections stacked vertically and navigated via in-page anchors (`#hero`, `#introduction`, `#galeria`, `#instalaciones`, `#contact`). All content edits happen here.
+- `css/templatemo-style.css` — all custom site styling (colors, layout, parallax, gallery effects). This is the file to edit for visual/design changes. `css/common.css` is currently empty.
+- `css/bootstrap.min.css` — Bootstrap 4 grid/utilities, used for the `.container`/`.row`/`.col-lg-*` responsive layout.
+- `css/font/` — two custom `@font-face` fonts (`Chasy` used via `.avocadosfont`, and `Avochill`).
+- Vendor libraries used directly (no bundler, loaded via `<script>`/`<link>` tags in `index.html`):
+  - **jQuery 1.9.1** — all interactivity is jQuery-based, written inline in a `<script>` block at the bottom of `index.html`.
+  - **Bootstrap 4 JS** — navbar collapse/toggler behavior.
+  - **Slick carousel** (`slick/`) — powers the photo galleries in the `#galeria` section, with responsive `slidesToShow` breakpoints defined inline in the script block.
+  - **Magnific Popup** (`magnific-popup/`) — lightbox for gallery images, wired to the `.tm-gallery` elements.
+  - **Font Awesome 5.5** (`fontawesome-5.5/`) — icons throughout (amenities, contact links, nav toggler).
+  - `js/jquery.singlePageNav.min.js` — smooth-scrolls the navbar to in-page sections.
+- `js/i18n.js` — our own (non-vendor) vanilla-JS module powering the ES/EN language toggle. No framework dependency. See the i18n section under "Architecture notes".
+- `img/` — all photography, organized by area: `comunes/` (shared/common areas), `casa/` (the house), `apartamento/` (the apartment). Each full-size image has a matching `tn-*.jpg` thumbnail used in the gallery grid before Magnific Popup swaps in the full image.
+
+## Architecture notes
+
+- The inline `<script>` at the bottom of `index.html` (not a separate JS file) wires up: a custom scroll-based parallax effect for `#hero` and `#contact` (hand-rolled, adapted from a CodePen — see the comment above `background_image_parallax`), navbar background-on-scroll, mobile menu auto-close, smooth-scroll anchor links, a scroll-reveal `IntersectionObserver`, and Slick/Magnific Popup initialization for the galleries. When touching scroll/parallax/gallery behavior, this is the one place to look.
+- **Parallax is gated**: the hero (`.tm-parallax`) JS parallax only attaches when NOT `(max-width: 767px)` and NOT `prefers-reduced-motion: reduce` (checked via `matchMedia` inside `$(function(){…})`). On mobile / reduced-motion the plain CSS background (`cover`/`center`) is shown instead — no JS fallback. **`#contact` no longer uses JS parallax at all**: the old `background_image_parallax_2` translated the viewport-sized `fixed` image and left an uncovered white strip at the section bottom, so it was removed. `#contact` now gets a subtle fixed-background effect from pure CSS (`background-attachment: fixed` under `min-width: 768px` only — it's janky on mobile), plus a `background-color` fallback and an `html` `background-color` so nothing shows white through (including rubber-band over-scroll past the footer).
+- **Hero background has the logo baked into the photo.** `avocados-bg01.jpg` (desktop) and `avocados-bg02.jpg` (portrait/mobile) each contain the pool photo *and* the "Avocados' Pool / NATURE & CHILL RESORT" wordmark. Because the logo lives inside the image, `cover` crops it differently per aspect ratio. The old code hand-tuned `background-position` per **viewport height** (which jumps when the mobile address bar shows/hides); that's been replaced by a single stable **width** breakpoint — `bg01` on `min-width: 768px`, the taller `bg02` under `max-width: 767px` (its logo stays centered under `cover`). If you swap the hero photo, keep the two crops or the wordmark will crop on one form factor.
+- **Scroll-reveal**: `.tm-section-pad-top` elements start hidden (`opacity:0; translateY`) and get `.is-visible` added as they enter the viewport. Both the CSS hide-rule and the JS are guarded by `prefers-reduced-motion` (CSS wraps the hidden state in `@media (prefers-reduced-motion: no-preference)`; JS reveals everything immediately under reduced-motion or when `IntersectionObserver` is unsupported), so content is never permanently hidden.
+- Custom site styles are namespaced with a `tm-` prefix (e.g. `tm-section-pad-top`, `tm-text-primary`, `tm-parallax`) to distinguish them from Bootstrap's own classes — follow this convention for new custom classes.
+- **Theme colors are CSS custom properties**, defined in `:root` at the top of `templatemo-style.css`: `--color-primary` (`#3496d8`, brand blue), `--color-primary-light` (`#73c1f6`), `--color-dark-green` (`#00612b`, navbar/footer), `--color-accent` (`#c57e7d`, down-arrow), `--color-highlight` (`#e9dd00`, nav hover). Use `var(--…)` for these rather than re-typing the hex. One-off colors (e.g. `#4a3753`, `#3085a3`, `#8f8f8f`) are still literals. Fluid type/spacing uses `clamp()` (headings, `.tm-section-pad-top*` padding) so it scales continuously instead of at breakpoints.
+- **i18n / language toggle**: user-facing Spanish strings carry a `data-i18n="key"` attribute; `js/i18n.js` holds a flat `translations = { es:{…}, en:{…} }` map and `setLanguage(lang)` walks `[data-i18n]` setting `textContent`, or `innerHTML` when the value contains markup (auto-detected by a `<` in the string, plus an explicit `htmlKeys` list). Values with inline markup keep it: `<strong>`/`<br>` in a couple of body keys, and the gallery caption keys (`gcap_*`) preserve the two-tone `<i>…<span>…</span></i>` structure the honey-hover effect animates. It also sets `<html lang>`, `document.title` (via the `doc_title` key), the `.tm-lang-btn.active` state, and persists the choice to `localStorage` (initial language: stored value, else `navigator.language`). **When adding/editing copy, add the matching key to BOTH `es` and `en` maps in `js/i18n.js`** (they must stay key-parity identical). The language switcher is a native `<details class="tm-lang-details">` globe dropdown in the navbar with `<button data-lang="es|en">` (buttons, not anchors — the global `$("a").on('click')` smooth-scroll handler would otherwise hijack them; and Bootstrap dropdowns aren't usable since Popper.js isn't vendored). Only the phone number, email, and the brand name are left untranslated (no `data-i18n`); beach proper names (Playa Mantas/Blanca) are kept identical in both maps by choice.
+- Gallery markup pattern: each item is `<a href="[full image]"><figure class="effect-honey tm-gallery-item"><img src="[tn- thumbnail]">... optional <figcaption></figure></a>`. Follow this exact structure when adding photos so both Slick and Magnific Popup pick them up correctly. Thumbnails are normalized to a uniform `aspect-ratio: 3/4; object-fit: cover` regardless of source dimensions.
