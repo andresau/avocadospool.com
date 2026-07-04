@@ -23,8 +23,12 @@ html {
   font-family: 'Chasy';
 }
 
+.textblack {
+  color: black;
+}
+
 body {
-  color: #8f8f8f;
+  color: #000000;
   margin: 0;
   padding: 0;
   overflow-x: hidden;
@@ -467,7 +471,7 @@ figure.effect-honey:hover h2 i {
 /* Contact */
 
 #contact {
-  color: white;
+  color: black;
   background-image: url(../img/blancapuntaleona-bg.jpg);
   background-position: center;
   background-repeat: no-repeat;
@@ -483,7 +487,7 @@ figure.effect-honey:hover h2 i {
 }
 
 .tm-underline {
-  border-top: 2px solid white;
+  border-top: 2px solid black;
   height: 8px;
   width: 100%;
 }
@@ -491,7 +495,7 @@ figure.effect-honey:hover h2 i {
 .tm-underline-inner {
   width: 25%;
   height: 8px;
-  background: white;
+  background: black;
 }
 
 .tm-contact-item {
@@ -505,7 +509,7 @@ figure.effect-honey:hover h2 i {
 
 .tm-contact-item-link i,
 .tm-contact-item-link span {
-  color: white;
+  color: black;
   transition: all 0.3s ease;
 }
 
